@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row p-0">
+            <div class="col-md-2 col-sm-1 navber-img">
+                <a href="">
+                    <img src="./img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-1 navber-input">
+                <input type="text" placeholder="search here!" class="input-item" onkeyup="search(this)">
+            </div>
+            <div class="col-md-4 col-sm-1 navber-sign">
+                <div class="login-section">
+                    <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" alt="">
+                    <p class="mt-1">Anik Anwar</p>
+                    <button type="button" class="btn btn-outline-danger logOutUser" onclick="logOut(this)">Log Out</button>
+                </div>
+            </div>
+        </div>
+        <nav class="d-flex d-lg-none d-md-none">
+            <div class="toggle">
+            </div>
+            <div class="slide">
+                <div class="img-box">
+                    <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" alt="">
+                    <div class="img-peregraph">
+                        <h2>Anik Anwar</h2>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li><i class="bi bi-envelope-open"></i><a href="">Mail</a></li>
+                    <li><i class="bi bi-phone-vibrate"></i><a href="">Contact</a></li>
+                    <li><i class="bi bi-chat-left-text"></i><a href="">Chat</a></li>
+                    <li><i class="bi bi-phone-vibrate"></i><a href="">Contact</a></li>
+                    <li><i class="bi bi-chat-left-text"></i><a href="">Chat</a></li>
+                    <li><i class="bi bi-envelope-open"></i><a href="">Mail</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row postCard">
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="width: 20%; height: 50px;">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+            </div>
+<!-- end Modal -->
+
+        <div class="row">
+            <div class="col-md-12 pagination-itams">
+                <ul class="pagination justify-content-center showPagination">
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="./js/script.js"></script>
+
+</html>
