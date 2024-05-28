@@ -76,14 +76,15 @@ function showAllPostCard(url) {
             totalPost = data.total;
             let allPost = data.posts;
             let allPostCard = ""
+            console.log(allPost, "hi");
             if (allPost.length == false) {
                 allPostCard += `<div class="header-section mt-5">
                 <h2>Not Founded</h2>
                 <button type="button" class="btn btn-danger" data-index="${allPost}" onclick="loadallposts(this)" >Go-Back</button>
             </div>`
-
             } else {
                 allPost.forEach(function (post) {
+                    console.log(post, "hlw");
                     let postBody = post.body
                     let result = ''
                     if (postBody.length > 200) {
@@ -93,33 +94,31 @@ function showAllPostCard(url) {
                     } else {
                         result = postBody
                     }
-                    allPostCard += ` <div class="col-md-4 mt-2 ">
+                    allPostCard += `
+                    <div class="col-md-4 mt-2">
                     <div class="card">
-                    <div class="card-content p-3 mb-1">
-                        <div class="post-content-preview">
-                            <h4 class="mt-1 style="font-weight: bold;">${post.title}</h4>
-                            <p class="mt-1">${result}</p>
+                        <div class="card-content p-3 mb-1">
+                            <div class="post-content-preview">
+                                <h4 class="mt-1 style=" font-weight: bold;">${post.title}</h4>
+                                <p class="mt-1">${post.body}</p>
+                            </div>
+                            <a class="btn btn-outline-danger text-center" data-toggle="modal"
+                                data-target="#exampleModal" data-index="${post.id}" onclick="loadsingleposts(this)"><i
+                                    class="bi bi-eye"></i>View</a>
+
                         </div>
-                        <a class="btn btn-outline-danger text-center" data-toggle="modal" data-target="#exampleModal" data-index="${post.id}" onclick="loadsingleposts(this)"><i class="bi bi-eye"></i>View</a>
-                            
-                    </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div class="card-user-section d-flex">
-                        <img src="${allUser[post.userId]['image']}" alt="" srcset=""">
-                        <p class="mt-1">${allUser[post.userId]['firstName']}</p>
-                    </div>
-                    <div class="card-reaction-section">
-                        <i class="bi bi-heart-fill"></i> <span>${post.reactions}</span>
-                    </div>
-                </div>
-                          
-                    </div> 
-                    </div> `
+                        <div class="card-footer d-flex justify-content-between">
+                            <div class="card-reaction-section">
+                                <i class="bi bi-heart-fill"></i> <span>${post.reactions.likes}</span>
+                            </div>
+                        </div>
 
-
+                    </div>
+                </div> `
                 });
             }
             postCard.innerHTML = allPostCard
+            console.log(allPostCard);
             showAllPostPagination()
 
         });
